@@ -15,6 +15,7 @@
 		12C0882B1DC741D000FE60B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12C088291DC741D000FE60B2 /* LaunchScreen.storyboard */; };
 		12C088361DC741D000FE60B2 /* AKZChessBoardGameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C088351DC741D000FE60B2 /* AKZChessBoardGameTests.m */; };
 		12C088411DC741D000FE60B2 /* AKZChessBoardGameUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C088401DC741D000FE60B2 /* AKZChessBoardGameUITests.m */; };
+		12D6CA631DCB9026001B8295 /* RWTreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 12D6CA611DCB9026001B8295 /* RWTreeNode.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		12C0883C1DC741D000FE60B2 /* AKZChessBoardGameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AKZChessBoardGameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		12C088401DC741D000FE60B2 /* AKZChessBoardGameUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AKZChessBoardGameUITests.m; sourceTree = "<group>"; };
 		12C088421DC741D000FE60B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		12D6CA611DCB9026001B8295 /* RWTreeNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWTreeNode.m; sourceTree = "<group>"; };
+		12D6CA621DCB9026001B8295 /* RWTreeNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWTreeNode.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,14 +104,9 @@
 		12C0881A1DC741D000FE60B2 /* AKZChessBoardGame */ = {
 			isa = PBXGroup;
 			children = (
-				12C0881E1DC741D000FE60B2 /* AppDelegate.h */,
-				12C0881F1DC741D000FE60B2 /* AppDelegate.m */,
-				12C088211DC741D000FE60B2 /* ViewController.h */,
-				12C088221DC741D000FE60B2 /* ViewController.m */,
-				12C088241DC741D000FE60B2 /* Main.storyboard */,
-				12C088271DC741D000FE60B2 /* Assets.xcassets */,
-				12C088291DC741D000FE60B2 /* LaunchScreen.storyboard */,
-				12C0882C1DC741D000FE60B2 /* Info.plist */,
+				12D6CA641DCBA78A001B8295 /* Helpers */,
+				12C0884F1DC744DB00FE60B2 /* Controllers */,
+				12C0884E1DC744CC00FE60B2 /* Recourses */,
 				12C0881B1DC741D000FE60B2 /* Supporting Files */,
 			);
 			path = AKZChessBoardGame;
@@ -138,6 +136,37 @@
 				12C088421DC741D000FE60B2 /* Info.plist */,
 			);
 			path = AKZChessBoardGameUITests;
+			sourceTree = "<group>";
+		};
+		12C0884E1DC744CC00FE60B2 /* Recourses */ = {
+			isa = PBXGroup;
+			children = (
+				12C0881E1DC741D000FE60B2 /* AppDelegate.h */,
+				12C0881F1DC741D000FE60B2 /* AppDelegate.m */,
+				12C088241DC741D000FE60B2 /* Main.storyboard */,
+				12C088271DC741D000FE60B2 /* Assets.xcassets */,
+				12C088291DC741D000FE60B2 /* LaunchScreen.storyboard */,
+				12C0882C1DC741D000FE60B2 /* Info.plist */,
+			);
+			name = Recourses;
+			sourceTree = "<group>";
+		};
+		12C0884F1DC744DB00FE60B2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				12C088211DC741D000FE60B2 /* ViewController.h */,
+				12C088221DC741D000FE60B2 /* ViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		12D6CA641DCBA78A001B8295 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				12D6CA611DCB9026001B8295 /* RWTreeNode.m */,
+				12D6CA621DCB9026001B8295 /* RWTreeNode.h */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,6 +301,7 @@
 			files = (
 				12C088231DC741D000FE60B2 /* ViewController.m in Sources */,
 				12C088201DC741D000FE60B2 /* AppDelegate.m in Sources */,
+				12D6CA631DCB9026001B8295 /* RWTreeNode.m in Sources */,
 				12C0881D1DC741D000FE60B2 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -496,6 +526,7 @@
 				12C088471DC741D000FE60B2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		12C088481DC741D000FE60B2 /* Build configuration list for PBXNativeTarget "AKZChessBoardGameTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +535,7 @@
 				12C0884A1DC741D000FE60B2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		12C0884B1DC741D000FE60B2 /* Build configuration list for PBXNativeTarget "AKZChessBoardGameUITests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +544,7 @@
 				12C0884D1DC741D000FE60B2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
