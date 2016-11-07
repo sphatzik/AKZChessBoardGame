@@ -2,7 +2,7 @@
 //  ViewController.m
 //  AKZChessBoardGame
 //
-//  Created by minus one on 31/10/16.
+//  Created by sphatzik on 31/10/16.
 //  Copyright © 2016 Spyridon Chatzikotoulas. All rights reserved.
 //
 
@@ -147,18 +147,16 @@ NSInteger targetY;
             }
         }
     }
-    
     [self findPaths];
     
     positionKnight=0;
     positionTarget=0;
     
-    
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
         [self reDrawBoard];
     });
 }
-
+//method that finds if there is a valid path to reach the finishing position
 -(void)findPaths{
     
     void ch(int,int,int[9][9]);
@@ -187,7 +185,7 @@ NSInteger targetY;
         for(int i=1;i<=8;i++){
             for(int j=1;j<=8;j++){
                 if(a[i][j]==k){
-                    ch(i,j,a);
+                    [self checkMove:i:j];
                 }
             }
         }
@@ -210,7 +208,7 @@ NSInteger targetY;
     [self showPath];
     NSLog(@"%@",arrayWithPath);
 }
-
+//method that colors the path of the pawn
 -(void)showPath{
     
     int position1=0, position2=0;
@@ -228,9 +226,9 @@ NSInteger targetY;
         boardCell[position2].image = [UIImage imageNamed: @"greenTile.png"];
     }
 }
-
-
-void ch(int i,int j,int a[9][9]){
+//method that calculates the moves needed to visit every position on the board
+//each valid move is added in a tree graph where the parent is the starting position and the childs are the possible next moves
+-(void) checkMove:(int)i :(int)j{
     
     RWTreeNodeObject<NSString*> *root;
     RWTreeNodeObject<NSString*> *n1;
@@ -289,7 +287,7 @@ void ch(int i,int j,int a[9][9]){
     [arrayOfNodes insertObject:root atIndex:counter];
     counter++;
 }
-
+//from all the possible moves the method calculates the one that leads to the finsihing position
 -(BOOL)calculateMoves{
     
     RWTreeNodeObject<NSString*> *root;
@@ -322,7 +320,6 @@ void ch(int i,int j,int a[9][9]){
             }
         }
     }
-    
     return found;
 }
 
@@ -331,7 +328,7 @@ void ch(int i,int j,int a[9][9]){
 -(void)reDrawBoard{
 
     
-    for (UIView *subUIView in self.view.subviews) {  //remove subviews before re draw
+    for (UIView *subUIView in self.view.subviews) {  //remove subviews before re drawing the chessboard
         [subUIView removeFromSuperview];
     }
     
@@ -411,6 +408,7 @@ void ch(int i,int j,int a[9][9]){
                action:@selector(calculateButton:)
      forControlEvents:UIControlEventTouchUpInside];
     [button setTitle:@"Calculate" forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     col = col+1;
     row = row +1;
     button.frame = CGRectMake(LeftX+cellWidth*col,topY+cellWidth*row, 160.0, 40.0);
